@@ -1,0 +1,103 @@
+# Site settings
+title: GSA Open Technology
+description: Open source code, data and APIs from GSA.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://open.gsa.gov" # the base hostname & protocol for your site
+logo: /assets/img/site-logo.png
+feature_image: /assets/img/feature-background.jpg
+
+sass:
+  load_paths:
+    - assets/uswds/scss
+
+autoprefixer:
+  browsers:
+  - last 3 versions
+
+colors:
+  background: '#ffffff'
+  button:
+    background: '#0071bc'
+    hover: '#3e94cf'
+    text: '#fff'
+  headers: '#205493'
+  text: '#212121'
+  projects:
+    accent: '#02bfe7'
+  banner:
+    background: '#fff'
+    text: '#112e51'
+    button:
+      background: '#dce4ef'
+      text: '#112e51'
+  footer:
+    background: '#5b616b'
+    text: '#fff'
+analytics:
+  google:
+    code: 'UA-48605964-32' # Change this to your GSA analytics code
+  dap:
+    agency: GSA    # Change this to your agency
+    subagency: Digital Service # Change this to your agency
+
+
+forms:
+- type: newsletter
+  heading: Sign up to receive updates from our team
+  url: https://docs.google.com/a/gsa.gov/forms/d/e/1FAIpQLSdTKaMGI8PGKdR7VjuRRMtvOiA-uiD5fqqsFoyN1g2SXoLTqQ/formResponse
+  button: Subscribe
+  privacypolicy: Your privacy and security are important to us. We'll only share your information as described in the <a href="http://www.gsa.gov/portal/content/116609">GSA Privacy and Security Notice</a>
+  fields:
+    - type: email
+      name: entry.474991268
+      label: Email Address
+
+- type: Save the Date
+  heading:
+  url: https://docs.google.com/forms/d/e/1FAIpQLSdc5fHkh5_NOV_k251P_lQayb8JbbzF1iRSIM-cu-loBTPDdg/formResponse
+  button: Submit
+  privacypolicy:
+  fields:
+    - type: email
+      name: entry.1045781291
+      label: Email Address
+
+
+footer:
+  image: /assets/img/gsa-logo-dark.jpg
+  image-alt: GSA
+
+# Build settings
+markdown: kramdown
+include:
+  - _navigation.json
+exclude:
+  - 'README.md'
+  - 'LICENSE.md'
+  - 'Rakefile'
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - 'package.json'
+  - 'node_modules'
+  - '_test'
+  - '.circleci'
+  - 'vendor'
+  - 'test'
+
+collections:
+  apidocs:
+    output: true
+    permalink: /api/:path/
+
+defaults:
+  -
+    scope:
+      type: apidocs
+    values:
+      layout: apidocs
+      toc: true
+
+toc:
+  min_level: 2
+  list_class: usa-sidenav-list
+  sublist_class: usa-sidenav-sub_list

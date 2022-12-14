@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div id="wrapper">
+        <div id="header">{% include header.html %}</div>
+        <div id="content">
+        {% include hero-header.html %}
+    {% if page.banner-heading %}
+    <section class="usa-section usa-section-dark">
+        <div class="usa-grid">
+            <div class="usa-width-one-whole usa-end-row">
+                <h2>{{ page.banner-heading }}</h2> {% if page.banner-text %}
+                <p>{{ page.banner-text }}</p>
+                {% endif %} {% if page.banner-button-text %}
+                <div class="center-content">
+                    <a href="{{ page.banner-button-link | prepend: site.baseurl }}" class="usa-button">{{ page.banner-button-text }}</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="banner functions">
+
+        <div class="usa-grid-full" align="center">
+            <div class="usa-width-one-third">
+                <i class="icon flag fa-bar-chart"></i>
+                <h3><a href="{{ '/data' | prepend: site.baseurl }}">DATA</a></h3>
+                <p>Discover and download data from one of GSA's components.</p>
+                <div class="usa-button-block"><a href="{{ '/data' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Discover Data</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt fa-gears"></i>
+                <h3><a href="{{ '/api' | prepend: site.baseurl }}">APIs</a></h3>
+                <p>Explore and access GSA data via dynamic web services.</p>
+                <div class="usa-button-block"><a href="{{ '/api' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Explore APIs</a>
+                </div>
+            </div>
+
+            <div class="usa-width-one-third">
+                <i class="icon flag alt2 fa-code"></i>
+                <h3><a href="{{ '/code' | prepend: site.baseurl }}">CODE</a></h3>
+                <p>Contribute to our latest open source code projects.</p>
+                <div class="usa-button-block"><a href="{{ '/code' | prepend: site.baseurl }}" class="usa-button  usa-button-outline">Code with Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="usa-section-light">
+      <div class="usa-grid">
+        <div class="usa-width-one-half">
+          <h3>Open Gov Plan 2016-2018</h3>
+          <p>This is the fourth update of GSA’s Open Government Plan. It continues our efforts to raise the bar on good management and demands higher standards of accountability by asking the public to become active participants in our government.</p>
+          <div class="usa-button-outline-inverse"><a href="https://gsa.github.io/opengovplan/" class="usa-button  usa-button-gray">Learn More</a>
+          </div>
+        </div>
+        <div class="usa-width-one-half">
+          <h3>GSA Labs</h3>
+          <p>Welcome to GSA Labs! This is a community where government agencies can share applications, code, and best practices. It is designed to maximize the collective thought leadership across the entire Government.</p>
+          <div class="usa-button-outline-inverse"><a href="https://labs.gsa.gov" class="usa-button  usa-button-gray">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer">{% include footer.html %}</div>
+    {% include javascript.html %}
+    </div>
+</body>
+
+</html>

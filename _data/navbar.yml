@@ -1,0 +1,31 @@
+assigned:
+    -
+        text: Home
+        href: pages/home.md
+        permalink: /
+        show_in_menu: false
+        show_in_footer: false
+    -
+        text: Data
+        href: pages/data.md
+        permalink: /data/
+        show_in_menu: true
+        show_in_footer: false
+    -
+        text: APIs
+        href: pages/api.md
+        permalink: /api/
+        show_in_menu: true
+        show_in_footer: false
+    -
+        text: Code
+        href: pages/code.md
+        permalink: /code/
+        show_in_menu: true
+        show_in_footer: false
+    -
+        text: Events
+        href: pages/events.md
+        permalink: /events/
+        show_in_menu: true
+        show_in_footer: false
